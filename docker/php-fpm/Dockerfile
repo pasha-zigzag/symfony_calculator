@@ -12,7 +12,9 @@ RUN set -xe \
         zlib-dev \
         oniguruma-dev \
         autoconf \
-        bash
+        bash \
+    && pecl install amqp-1.11.0beta \
+    && docker-php-ext-enable amqp
 
 # Xdebug
 ARG INSTALL_XDEBUG=false
